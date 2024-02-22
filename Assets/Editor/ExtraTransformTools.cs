@@ -16,6 +16,7 @@ public static class ExtraTransformTools
     {
         Undo.RecordObjects(Selection.transforms, "Randomize Rotation");
         foreach (var xform in Selection.transforms)
-            xform.localRotation = Random.rotation;
+            xform.localRotation =
+              Quaternion.AngleAxis(Random.Range(-180, 180), Vector3.up);
     }
 }
